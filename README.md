@@ -4,7 +4,7 @@
 
 [Back to Portfolio](https://github.com/KSWISHA9)
 
-Real-world enterprise hybrid identity migration - 61 users hard-matched from on-premises Active Directory to Microsoft Entra ID via Entra Connect with ImmutableID conflict resolution and zero errors.
+Enterprise hybrid identity migration case study - 61 users hard-matched from on-premises Active Directory to Microsoft Entra ID via Entra Connect with ImmutableID conflict resolution and zero errors.
 
 ---
 
@@ -26,7 +26,7 @@ Real-world enterprise hybrid identity migration - 61 users hard-matched from on-
 
 ## Business Request
 
-MileHighKids required a domain migration from hamptonroadshs.org to milehighkids.org. On-premises Active Directory accounts needed to be hard-matched to existing Microsoft Entra ID cloud accounts to preserve user data, licenses, and mailbox continuity with zero disruption.
+A simulated enterprise tenant required a domain migration from a legacy Active Directory namespace to a new cloud identity namespace. On-premises Active Directory accounts needed to be hard-matched to existing Microsoft Entra ID cloud accounts to preserve user data, licenses, mailbox continuity, and group membership with zero disruption.
 
 ---
 
@@ -34,7 +34,7 @@ MileHighKids required a domain migration from hamptonroadshs.org to milehighkids
 
 ```mermaid
 flowchart TD
-    A[On-Premises AD hamptonroadshs.org] --> B[Microsoft Entra Connect]
+    A[On-Premises AD legacy domain] --> B[Microsoft Entra Connect]
     B --> C{ImmutableID Conflict?}
     C -->|Yes| D[LostAndFound OU Exclusion]
     D --> E[Delta Sync]
@@ -42,7 +42,7 @@ flowchart TD
     F --> G[Graph API PATCH ImmutableID]
     G --> H[Resync and Validate]
     C -->|No| H
-    H --> I[Microsoft Entra ID milehighkids.org]
+    H --> I[Microsoft Entra ID target tenant]
     I --> J[Licenses Preserved]
     I --> K[Mailboxes Intact]
     I --> L[Group Memberships Confirmed]
@@ -54,9 +54,9 @@ flowchart TD
 
 | Item | Detail |
 |---|---|
-| Client | MileHighKids |
-| Source Domain | hamptonroadshs.org |
-| Target Domain | milehighkids.org |
+| Environment | Sanitized enterprise tenant case study |
+| Source Namespace | Legacy on-premises Active Directory domain |
+| Target Namespace | Microsoft Entra ID cloud tenant |
 | Users Migrated | 61 |
 | ImmutableID Conflicts | Resolved for all affected accounts |
 | Method | Entra Connect hard-match via Microsoft Graph API PATCH |
@@ -67,21 +67,18 @@ flowchart TD
 
 ## Evidence Gallery
 
-These screenshots document the migration workflow from discovery through validation.
+These screenshots document the migration workflow from discovery through validation and show the purpose of each step.
 
-| Discovery and Pre-Flight | Hard-Match Execution |
+| Screenshot | What It Demonstrates |
 |---|---|
-| ![Entra identity audit](screenshots/01-Entra-Identity-Audit.png) | ![Hard-match two-object pattern](screenshots/08-Hard-Match-Two-Object-Pattern.png) |
-| Identity audit used to classify users before migration. | Two-object pattern used to resolve ImmutableID conflicts. |
-| ![Discovery classification](screenshots/06-IAM002-Discovery-Classification.png) | ![Pilot hard-match success](screenshots/09-Hard-Match-Pilot-Success.png) |
-| Discovery output showing user classification before migration. | Pilot validation confirming hard-match success before batch execution. |
-
-| Batch Migration and Validation | Rollback Readiness |
-|---|---|
-| ![Hard-match batch summary](screenshots/10-Hard-Match-Batch-Summary.png) | ![Rollback validation](screenshots/12-Rollback-Validation.png) |
-| Batch migration summary for migrated users. | Rollback validation confirming recovery process readiness. |
-| ![Post-migration validation](screenshots/11-Post-Migration-Validation.png) | ![Pre-flight health check](screenshots/07-PreFlight-Health-Check.png) |
-| Post-migration validation confirming sync and account state. | Pre-flight health check completed before production migration. |
+| ![Entra identity audit](screenshots/01-Entra-Identity-Audit.png) | **Identity audit:** Reviews Entra ID account state before migration so cloud-only, synced, disabled, and conflict-prone users can be identified before any changes are made. |
+| ![Discovery classification](screenshots/06-IAM002-Discovery-Classification.png) | **Discovery classification:** Groups users into migration categories so soft-match candidates, hard-match candidates, cloud-only users, and disabled accounts can follow the correct path. |
+| ![Pre-flight health check](screenshots/07-PreFlight-Health-Check.png) | **Pre-flight health check:** Confirms sync readiness, required modules, tenant connectivity, and migration prerequisites before execution. |
+| ![Hard-match two-object pattern](screenshots/08-Hard-Match-Two-Object-Pattern.png) | **Two-object conflict pattern:** Shows the duplicate-object condition that requires ImmutableID hard-match remediation. |
+| ![Pilot hard-match success](screenshots/09-Hard-Match-Pilot-Success.png) | **Pilot validation:** Confirms the hard-match process works on a controlled pilot account before batch migration. |
+| ![Hard-match batch summary](screenshots/10-Hard-Match-Batch-Summary.png) | **Batch migration summary:** Tracks users processed, accounts matched, conflicts resolved, and migration outcome. |
+| ![Post-migration validation](screenshots/11-Post-Migration-Validation.png) | **Post-migration validation:** Confirms synced state, ImmutableID alignment, license continuity, mailbox continuity, and group membership after migration. |
+| ![Rollback validation](screenshots/12-Rollback-Validation.png) | **Rollback readiness:** Documents the recovery path and confirms the rollback plan is available if a migration step fails. |
 
 Additional screenshots are available in the [screenshots](screenshots/) folder.
 
@@ -111,7 +108,7 @@ The ImmutableID hard-match process for each conflicting object:
 - Delta Synchronization Management
 - Post-Migration Validation
 - License and Mailbox Continuity
-- Real Production IAM Engagement
+- Enterprise IAM Migration Case Study
 - Zero-Downtime Migration Execution
 
 ---
@@ -178,7 +175,7 @@ ss README.md
 | [IAM-004 Conditional Access and Zero Trust](https://github.com/KSWISHA9/IAM-004-Conditional-Access-Zero-Trust) | MFA, CA policies, named locations |
 | [IAM-005 Identity Governance](https://github.com/KSWISHA9/IAM-005-Identity-Governance) | PIM, Access Reviews, Entitlement Management |
 | [IAM-006 Identity Operations and Risk Analytics](https://github.com/KSWISHA9/IAM-006-Enterprise-Identity-Operations-Risk-Analytics) | Risk scoring, dashboards, remediation |
-| [IAM-007 Enterprise Hybrid Identity Migration](https://github.com/KSWISHA9/IAM-007-Enterprise-Hybrid-Identity-Migration) | Real production migration, 61 users |
+| [IAM-007 Enterprise Hybrid Identity Migration](https://github.com/KSWISHA9/IAM-007-Enterprise-Hybrid-Identity-Migration) | Hybrid identity migration case study, 61 users |
 
 ---
 
