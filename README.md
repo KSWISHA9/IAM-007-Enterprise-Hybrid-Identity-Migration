@@ -69,16 +69,53 @@ flowchart TD
 
 These screenshots document the migration workflow from discovery through validation and show the purpose of each step.
 
-| Screenshot | What It Demonstrates |
-|---|---|
-| ![Entra identity audit](screenshots/01-Entra-Identity-Audit.png) | **Identity audit:** Reviews Entra ID account state before migration so cloud-only, synced, disabled, and conflict-prone users can be identified before any changes are made. |
-| ![Discovery classification](screenshots/06-IAM002-Discovery-Classification.png) | **Discovery classification:** Groups users into migration categories so soft-match candidates, hard-match candidates, cloud-only users, and disabled accounts can follow the correct path. |
-| ![Pre-flight health check](screenshots/07-PreFlight-Health-Check.png) | **Pre-flight health check:** Confirms sync readiness, required modules, tenant connectivity, and migration prerequisites before execution. |
-| ![Hard-match two-object pattern](screenshots/08-Hard-Match-Two-Object-Pattern.png) | **Two-object conflict pattern:** Shows the duplicate-object condition that requires ImmutableID hard-match remediation. |
-| ![Pilot hard-match success](screenshots/09-Hard-Match-Pilot-Success.png) | **Pilot validation:** Confirms the hard-match process works on a controlled pilot account before batch migration. |
-| ![Hard-match batch summary](screenshots/10-Hard-Match-Batch-Summary.png) | **Batch migration summary:** Tracks users processed, accounts matched, conflicts resolved, and migration outcome. |
-| ![Post-migration validation](screenshots/11-Post-Migration-Validation.png) | **Post-migration validation:** Confirms synced state, ImmutableID alignment, license continuity, mailbox continuity, and group membership after migration. |
-| ![Rollback validation](screenshots/12-Rollback-Validation.png) | **Rollback readiness:** Documents the recovery path and confirms the rollback plan is available if a migration step fails. |
+### Identity Audit
+
+![Entra identity audit](screenshots/01-Entra-Identity-Audit.png)
+
+Shows the initial Entra ID account review used to identify cloud-only, synced, disabled, and conflict-prone users before any migration changes were made.
+
+### Discovery Classification
+
+![Discovery classification](screenshots/06-IAM002-Discovery-Classification.png)
+
+Shows how users were grouped into migration categories, including soft-match candidates, hard-match candidates, cloud-only accounts, and disabled accounts.
+
+### Pre-Flight Health Check
+
+![Pre-flight health check](screenshots/07-PreFlight-Health-Check.png)
+
+Shows the readiness check used to confirm sync health, required modules, tenant connectivity, and migration prerequisites before execution.
+
+### Two-Object Conflict Pattern
+
+![Hard-match two-object pattern](screenshots/08-Hard-Match-Two-Object-Pattern.png)
+
+Shows the duplicate-object condition that required ImmutableID hard-match remediation.
+
+### Pilot Hard-Match Success
+
+![Pilot hard-match success](screenshots/09-Hard-Match-Pilot-Success.png)
+
+Shows the pilot validation used to confirm the hard-match process worked on a controlled account before batch migration.
+
+### Batch Migration Summary
+
+![Hard-match batch summary](screenshots/10-Hard-Match-Batch-Summary.png)
+
+Shows the migration batch outcome, including users processed, accounts matched, conflicts resolved, and final migration status.
+
+### Post-Migration Validation
+
+![Post-migration validation](screenshots/11-Post-Migration-Validation.png)
+
+Shows post-migration checks for synced state, ImmutableID alignment, license continuity, mailbox continuity, and group membership.
+
+### Rollback Readiness
+
+![Rollback validation](screenshots/12-Rollback-Validation.png)
+
+Shows the rollback validation process used to confirm a recovery path was available if a migration step failed.
 
 Additional screenshots are available in the [screenshots](screenshots/) folder.
 
