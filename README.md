@@ -13,6 +13,7 @@ Real-world enterprise hybrid identity migration - 61 users hard-matched from on-
 - Business Request
 - Architecture
 - Engagement Summary
+- Evidence Gallery
 - Hard-Match Workflow
 - Skills Demonstrated
 - Technologies
@@ -61,6 +62,28 @@ flowchart TD
 | Method | Entra Connect hard-match via Microsoft Graph API PATCH |
 | Outcome | Zero errors, zero user disruption |
 | Duration | Single migration window |
+
+---
+
+## Evidence Gallery
+
+These screenshots document the migration workflow from discovery through validation.
+
+| Discovery and Pre-Flight | Hard-Match Execution |
+|---|---|
+| ![Entra identity audit](screenshots/01-Entra-Identity-Audit.png) | ![Hard-match two-object pattern](screenshots/08-Hard-Match-Two-Object-Pattern.png) |
+| Identity audit used to classify users before migration. | Two-object pattern used to resolve ImmutableID conflicts. |
+| ![Discovery classification](screenshots/06-IAM002-Discovery-Classification.png) | ![Pilot hard-match success](screenshots/09-Hard-Match-Pilot-Success.png) |
+| Discovery output showing user classification before migration. | Pilot validation confirming hard-match success before batch execution. |
+
+| Batch Migration and Validation | Rollback Readiness |
+|---|---|
+| ![Hard-match batch summary](screenshots/10-Hard-Match-Batch-Summary.png) | ![Rollback validation](screenshots/12-Rollback-Validation.png) |
+| Batch migration summary for migrated users. | Rollback validation confirming recovery process readiness. |
+| ![Post-migration validation](screenshots/11-Post-Migration-Validation.png) | ![Pre-flight health check](screenshots/07-PreFlight-Health-Check.png) |
+| Post-migration validation confirming sync and account state. | Pre-flight health check completed before production migration. |
+
+Additional screenshots are available in the [screenshots](screenshots/) folder.
 
 ---
 
