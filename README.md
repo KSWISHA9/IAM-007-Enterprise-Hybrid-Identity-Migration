@@ -4,6 +4,12 @@
 
 [Back to Portfolio](https://github.com/KSWISHA9)
 
+![Active Directory](https://img.shields.io/badge/Active%20Directory-2F74C0?style=for-the-badge&logo=windows&logoColor=white)
+![Microsoft Entra ID](https://img.shields.io/badge/Microsoft%20Entra%20ID-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+![Entra Connect](https://img.shields.io/badge/Entra%20Connect-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![Migration](https://img.shields.io/badge/Migration-111827?style=for-the-badge&logo=microsoft&logoColor=white)
+
 Enterprise hybrid identity migration case study - 61 users hard-matched from on-premises Active Directory to Microsoft Entra ID via Entra Connect with ImmutableID conflict resolution and zero errors.
 
 ---
