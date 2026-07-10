@@ -19,7 +19,9 @@ Enterprise hybrid identity migration case study - 61 users hard-matched from on-
 - Business Request
 - Architecture
 - Engagement Summary
+- Evidence Links
 - Evidence Gallery
+- What This Proves
 - Hard-Match Workflow
 - Skills Demonstrated
 - Technologies
@@ -68,6 +70,15 @@ flowchart TD
 | Method | Entra Connect hard-match via Microsoft Graph API PATCH |
 | Outcome | Zero errors, zero user disruption |
 | Duration | Single migration window |
+
+---
+
+## Evidence Links
+
+- [View all screenshots](screenshots/)
+- [Review migration scripts](scripts/)
+- [Review migration documentation](docs/)
+- [Review IAM-001 hybrid identity baseline](https://github.com/KSWISHA9/IAM-001-Hybrid-Identity-Engineering)
 
 ---
 
@@ -127,6 +138,16 @@ Additional screenshots are available in the [screenshots](screenshots/) folder.
 
 ---
 
+## What This Proves
+
+- Planned and documented a hybrid identity migration from a legacy AD namespace to a Microsoft Entra ID tenant.
+- Classified users by migration state, sync readiness, and conflict risk before execution.
+- Resolved ImmutableID hard-match conflicts using Entra Connect sync controls and Microsoft Graph API updates.
+- Validated license continuity, mailbox continuity, group membership, synced state, and rollback readiness.
+- Completed the case study with zero-error migration evidence across 61 users.
+
+---
+
 ## Hard-Match Workflow
 
 The ImmutableID hard-match process for each conflicting object:
@@ -173,17 +194,17 @@ The ImmutableID hard-match process for each conflicting object:
 
 ```text
 IAM-007-Enterprise-Hybrid-Identity-Migration/
-ss scripts/
-ss     Detect-ImmutableIDConflicts.ps1
-ss     Resolve-HardMatch.ps1
-ss     Validate-PostMigration.ps1
-ss     Export-MigrationReport.ps1
-ss docs/
-ss     Hard-Match-Runbook.md
-ss     Two-Object-Pattern.md
-ss     Lessons-Learned.md
-ss screenshots/
-ss README.md
+|-- scripts/
+|   |-- Detect-ImmutableIDConflicts.ps1
+|   |-- Resolve-HardMatch.ps1
+|   |-- Validate-PostMigration.ps1
+|   `-- Export-MigrationReport.ps1
+|-- docs/
+|   |-- Hard-Match-Runbook.md
+|   |-- Two-Object-Pattern.md
+|   `-- Lessons-Learned.md
+|-- screenshots/
+`-- README.md
 ```
 
 ---
@@ -205,6 +226,7 @@ ss README.md
 - Migration validation dashboard
 - Rollback runbook for failed migrations
 - Integration with IAM-001 Hybrid Identity Engineering baseline
+
 ---
 
 ## Related Projects
@@ -218,7 +240,6 @@ ss README.md
 | [IAM-004 Conditional Access and Zero Trust](https://github.com/KSWISHA9/IAM-004-Conditional-Access-Zero-Trust) | MFA, CA policies, named locations |
 | [IAM-005 Identity Governance](https://github.com/KSWISHA9/IAM-005-Identity-Governance) | PIM, Access Reviews, Entitlement Management |
 | [IAM-006 Identity Operations and Risk Analytics](https://github.com/KSWISHA9/IAM-006-Enterprise-Identity-Operations-Risk-Analytics) | Risk scoring, dashboards, remediation |
-| [IAM-007 Enterprise Hybrid Identity Migration](https://github.com/KSWISHA9/IAM-007-Enterprise-Hybrid-Identity-Migration) | Hybrid identity migration case study, 61 users |
 
 ---
 
